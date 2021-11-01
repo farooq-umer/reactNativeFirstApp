@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Linking, StyleSheet, Text, View, Button } from 'react-native';
+import Home from './screens/Home';
 
 export default function App () {
   const [name, setName] = useState({ firstName: 'Umer', lastName: 'Farooq' });
@@ -18,17 +19,19 @@ export default function App () {
     setClickCount(0);
   }
 
-  return (
-    <View style={styles.container}>
-      <Text>Counter: {counter}</Text>
-      <Button title='Update Counter!' onPress={onClickBtn} ></Button>
-      <Text>You clicked {clickCount} times</Text>
-      <Button title='Reset Counter' onPress={onClickResetBtn} ></Button>
+  return <Home />
 
-      {/* <Button title='Open Youtube!' onPress={() => { Linking.openURL('https://youtube.com') }} ></Button> */}
-      <StatusBar style="auto" />
-    </View>
-  );
+  // return (
+  //   <View style={styles.container}>
+  //     <Text>Counter: {counter}</Text>
+  //     <Button title='Update Counter!' onPress={onClickBtn} ></Button>
+  //     <Text>You clicked {clickCount} times</Text>
+  //     <Button title='Reset Counter' onPress={onClickResetBtn} ></Button>
+
+  //     {/* <Button title='Open Youtube!' onPress={() => { Linking.openURL('https://youtube.com') }} ></Button> */}
+  //     <StatusBar style="auto" />
+  //   </View>
+  // );
 }
 
 const styles = StyleSheet.create({
